@@ -15,17 +15,22 @@
         .marquee img { height: 40px; margin: 0 5px; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        .btn { border: 1px solid #800080; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.65em; color: #00ff00; animation: color-change 4s infinite; display: flex; align-items: center; justify-content: center; margin: 5px; }
-        @keyframes color-change { 0%, 100% { background: rgba(75,0,130,0.7); } 33% { background: rgba(0,0,139,0.7); } 66% { background: rgba(0,191,255,0.7); } }
+        .btn { border: 1px solid #800080; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.65em; color: #00ff00; background: rgba(75,0,130,0.7); display: flex; align-items: center; justify-content: center; margin: 5px; }
 
-        /* Botón Token corregido */
-        .btn-token { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') center/cover; border: 3px solid #800080; animation: border-pulse 1.5s infinite; display: block; margin: 0 auto; }
-        @keyframes border-pulse { 0% { border-color: #800080; } 50% { border-color: #00ff00; } 100% { border-color: #800080; } }
-        
-        .btn-pancake-img { width: 90%; max-width: 280px; height: 50px; background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') center/cover; border: 2px solid #00ffcc; border-radius: 10px; display: block; margin-top: 10px; }
-        .blink-text { color: #00ff00; font-weight: bold; animation: blink 1s infinite; display: block; margin-top: 5px; }
+        /* Botón Token con texto verde titilante */
+        .btn-token { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') center/cover; border: 3px solid #800080; display: block; margin: 0 auto; }
+        .blink-green { color: #00ff00; font-weight: bold; font-size: 0.9em; animation: blink 1s infinite; display: block; margin-top: 5px; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
+        /* Botón Pancake con borde animado */
+        .btn-pancake-img { width: 90%; max-width: 280px; height: 50px; background: url('https://ipfs.io/ipfs/bafybeiczb3v5x34rlcgedgccdiacjy4x7u7x3ynanok7mpmobnnbjaxeme') center/cover; border: 3px solid; border-radius: 10px; display: block; margin-top: 10px; animation: border-cycle 3s infinite; }
+        @keyframes border-cycle { 0% { border-color: #00ff00; } 33% { border-color: #0000ff; } 66% { border-color: #800080; } 100% { border-color: #00ff00; } }
+        
+        .blink-text { color: #00ff00; font-weight: bold; animation: blink 1s infinite; display: block; margin-top: 5px; }
+
+        /* Botón NFT circular central */
+        .btn-nft { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu') center/cover; border: 2px solid #00ff00; display: block; margin: 10px auto; }
+        
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 15px; }
     </style>
 </head>
@@ -49,23 +54,25 @@
         </div>
     </div>
 
-    <div style="width: 80%; max-width: 280px; height: 160px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
+    <div style="width: 80%; max-width: 280px; height: 160px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 10px;">
         <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe>
     </div>
 
     <div style="margin-bottom: 15px;">
         <a href="https://app.binance.com/uni-qr/web3-token-details?tokenCA=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65&binanceChainId=56" class="btn-token"></a>
-        <span style="color: #800080; font-weight: bold; font-size: 0.9em; display: block; margin-top: 5px;">TOKEN</span>
+        <span class="blink-green">TOKEN</span>
     </div>
 
     <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-pancake-img"></a>
     <span class="blink-text">GO PANKACKE SWAP</span>
 
+    <!-- Botón NFT circular en el medio -->
+    <a href="https://element.market/account/collection" class="btn-nft"></a>
+
     <div class="grid">
         <a href="#" class="btn">MÚSICA</a>
         <a href="#" class="btn">DEPORTES</a>
         <a href="#" class="btn">NOTICIAS</a>
-        <a href="https://element.market/account/collection" class="btn">NFTs</a>
     </div>
 
     <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 10px;">
