@@ -17,15 +17,23 @@
 
         /* Botón Token */
         .token-container { margin: 20px auto; }
-        .btn-token { display: block; width: 120px; height: 120px; margin: 0 auto; border-radius: 50%; border: 3px solid #00ffcc; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; background-size: cover; }
-        .token-label { display: block; margin-top: 8px; color: #00ffcc; font-weight: bold; text-decoration: none; }
+        .btn-token { display: block; width: 120px; height: 120px; margin: 0 auto; border-radius: 50%; border: 3px solid #800080; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; background-size: cover; }
+        .token-label { display: block; margin-top: 8px; color: #800080; font-weight: bold; text-decoration: none; font-size: 1.2em; }
 
-        /* Sección Swap con fondo personalizado */
+        /* Sección Swap */
         .swap-section { background: url('https://ipfs.io/ipfs/bafybeiby2hij6rb775xb4jqdguxvpqjkvhnacsjbqwb6lzjcwuglj6frse') no-repeat center center; background-size: cover; padding: 40px 20px; border-radius: 15px; margin: 20px auto; max-width: 500px; border: 2px solid #800080; }
         
-        /* Animación parpadeo verde */
-        .blink-green { animation: blinker 1.5s linear infinite; color: #00ffcc; }
-        @keyframes blinker { 50% { opacity: 0.3; } }
+        /* Contrato en negro con fondo resaltado */
+        .contract-box { background: rgba(255, 255, 255, 0.8); color: black; padding: 10px; border-radius: 5px; font-weight: bold; margin: 10px 0; }
+        
+        .text-green { color: #00ff00; font-weight: bold; }
+
+        /* Animación parpadeo morado-azul */
+        .blink-morph { animation: morphing 2s infinite; font-weight: bold; }
+        @keyframes morphing { 0% { color: #800080; } 50% { color: #00ccff; } 100% { color: #800080; } }
+
+        /* Botón final */
+        .btn-swap-custom { display: block; width: 100%; max-width: 300px; height: 60px; margin: 15px auto; background: url('https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu') no-repeat center center; background-size: contain; border: none; }
     </style>
 </head>
 <body>
@@ -50,10 +58,11 @@
     </div>
 
     <div class="swap-section">
-        <h3 class="blink-green">Intercambio ZAARD (PancakeSwap)</h3>
-        <p>Contrato: <code>0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65</code></p>
-        <p>Aceptamos: USDT, BNB, BTC</p>
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn" style="display:block;">Ir al Swap (PancakeSwap)</a>
+        <h3 class="blink-morph">Intercambio ZAARD (PancakeSwap)</h3>
+        <p>Contrato:</p>
+        <div class="contract-box">0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65</div>
+        <p>Aceptamos: <span class="text-green">USDT, BNB, BTC, USDC</span></p>
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-swap-custom"></a>
     </div>
 
     <div class="grid">
