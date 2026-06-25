@@ -11,26 +11,22 @@
         .text-box { background: rgba(128, 0, 128, 0.7); padding: 25px; border-radius: 20px; width: 80%; border: 2px solid #800080; }
         
         .marquee-container { width: 100%; max-width: 350px; overflow: hidden; margin-bottom: 10px; }
-        .marquee { display: flex; animation: scroll 6s linear infinite; }
-        .marquee img { height: 40px; margin: 0 5px; }
+        .marquee { display: flex; animation: scroll 12s linear infinite; }
+        .marquee img { height: 40px; margin: 0 5px; flex-shrink: 0; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         .btn { border: 1px solid #800080; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.65em; color: #00ff00; background: rgba(75,0,130,0.7); display: flex; align-items: center; justify-content: center; margin: 5px; }
 
-        /* Botón Token con texto verde titilante */
-        .btn-token { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') center/cover; border: 3px solid #800080; display: block; margin: 0 auto; }
+        @keyframes border-cycle { 0% { border-color: #00ff00; } 33% { border-color: #0000ff; } 66% { border-color: #800080; } 100% { border-color: #00ff00; } }
+        
+        .btn-token { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') center/cover; border: 3px solid; animation: border-cycle 3s infinite; display: block; margin: 0 auto; }
+        .btn-nft { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu') center/cover; border: 3px solid; animation: border-cycle 3s infinite; display: block; margin: 10px auto; }
+        
         .blink-green { color: #00ff00; font-weight: bold; font-size: 0.9em; animation: blink 1s infinite; display: block; margin-top: 5px; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        /* Botón Pancake con borde animado */
         .btn-pancake-img { width: 90%; max-width: 280px; height: 50px; background: url('https://ipfs.io/ipfs/bafybeiczb3v5x34rlcgedgccdiacjy4x7u7x3ynanok7mpmobnnbjaxeme') center/cover; border: 3px solid; border-radius: 10px; display: block; margin-top: 10px; animation: border-cycle 3s infinite; }
-        @keyframes border-cycle { 0% { border-color: #00ff00; } 33% { border-color: #0000ff; } 66% { border-color: #800080; } 100% { border-color: #00ff00; } }
-        
-        .blink-text { color: #00ff00; font-weight: bold; animation: blink 1s infinite; display: block; margin-top: 5px; }
 
-        /* Botón NFT circular central */
-        .btn-nft { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu') center/cover; border: 2px solid #00ff00; display: block; margin: 10px auto; }
-        
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 15px; }
     </style>
 </head>
@@ -51,6 +47,11 @@
             <img src="https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue">
             <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
             <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
+            <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
+            <img src="https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym">
+            <img src="https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue">
+            <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
+            <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
         </div>
     </div>
 
@@ -64,13 +65,13 @@
     </div>
 
     <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-pancake-img"></a>
-    <span class="blink-text">GO PANKACKE SWAP</span>
+    <span class="blink-green">GO PANKACKE SWAP</span>
 
-    <!-- Botón NFT circular en el medio -->
     <a href="https://element.market/account/collection" class="btn-nft"></a>
+    <span class="blink-green">NFT</span>
 
     <div class="grid">
-        <a href="#" class="btn">MÚSICA</a>
+        <a href="https://open.spotify.com/playlist/2WoPMH4aMnQ0IsHx0yPZFk?si=3Tkd2RchQGuV1sC0EHVljQ%0A" class="btn">MÚSICA</a>
         <a href="#" class="btn">DEPORTES</a>
         <a href="#" class="btn">NOTICIAS</a>
     </div>
