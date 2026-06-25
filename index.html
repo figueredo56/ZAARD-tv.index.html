@@ -7,33 +7,35 @@
     <style>
         body { margin: 0; padding: 10px; font-family: sans-serif; text-align: center; color: white; background: url('https://ipfs.io/ipfs/bafybeic3rhz5qpxq3slf4n77h6jwhtspd3jifjm2z7777cm4whniozi32u') no-repeat center center fixed; background-size: cover; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
-        /* Pantalla de bienvenida con el CID correcto */
+        /* Bienvenida */
         #welcome-screen { position: fixed; top:0; left:0; width:100%; height:100%; background: url('https://ipfs.io/ipfs/bafybeic3rhz5qpxq3slf4n77h6jwhtspd3jifjm2z7777cm4whniozi32u') center/cover; z-index: 100; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+        .text-box { background: rgba(128, 0, 128, 0.6); padding: 20px; border-radius: 15px; width: 85%; }
         
-        /* Marquee */
-        .marquee-container { width: 100%; max-width: 350px; overflow: hidden; margin-bottom: 15px; }
-        .marquee { display: flex; animation: scroll 15s linear infinite; }
+        /* Carrusel */
+        .marquee-container { width: 100%; max-width: 350px; overflow: hidden; margin-bottom: 10px; }
+        .marquee { display: flex; animation: scroll 8s linear infinite; } /* Más rápido */
         .marquee img { height: 40px; margin: 0 5px; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        .video-container { width: 80%; max-width: 280px; height: 160px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: rgba(0,0,0,0.5); }
+        /* Botones generales con cambio de color */
+        .btn { border: 1px solid #800080; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.65em; color: #00ff00; animation: color-change 4s infinite; display: flex; align-items: center; justify-content: center; }
+        @keyframes color-change { 0% { background: rgba(75,0,130,0.7); } 33% { background: rgba(0,0,139,0.7); } 66% { background: rgba(0,191,255,0.7); } 100% { background: rgba(75,0,130,0.7); } }
+
+        /* Botón Token y Pancake con CID */
+        .btn-token { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') center/cover; border: 3px solid #800080; display: block; margin: 0 auto; }
+        .btn-pancake { width: 90%; max-width: 280px; height: 50px; background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') center/cover; border: 2px solid #00ffcc; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #00ff00; font-weight: bold; text-decoration: none; margin: 15px 0; }
         
-        /* Botones y efectos */
-        .btn { background: rgba(0,0,0,0.7); border: 1px solid #800080; padding: 8px; text-decoration: none; border-radius: 6px; font-size: 0.65em; color: #fff; animation: blink-bg 1.5s infinite; }
-        @keyframes blink-bg { 0%, 100% { background: rgba(0,0,0,0.7); } 50% { background: rgba(128,0,128,0.5); } }
-
-        .btn-pancake { width: 90%; max-width: 280px; height: 50px; background: url('https://yellow-fast-leopard-507.mypinata.cloud/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') center/cover; border: 2px solid #00ffcc; border-radius: 10px; margin-bottom: 20px; animation: border-blink 1.5s infinite; }
-        @keyframes border-blink { 0%, 100% { border-color: #00ffcc; } 50% { border-color: #800080; } }
-
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 20px; }
     </style>
 </head>
 <body>
 
     <div id="welcome-screen">
-        <h1 style="color: #00ff00; text-shadow: 2px 2px #000;">Bienvenidos al canal oficial ZAARD</h1>
-        <p style="background: rgba(0,0,0,0.6); padding: 10px; border-radius: 10px;">ZAARD es un ecosistema que engloba todo lo referente a la IA con token, juegos, NFT y alta calidad.</p>
-        <button onclick="document.getElementById('welcome-screen').style.display='none'" class="btn" style="padding: 15px 30px; font-size: 1.2em; border-color: #00ff00;">GO ecosystem ZAARD</button>
+        <div class="text-box">
+            <h1 style="color: #00ff00; font-size: 1.5em;">Bienvenidos al canal oficial ZAARD</h1>
+            <p style="color: white; font-size: 0.9em;">ZAARD es un ecosistema técnico de alta vanguardia que integra Inteligencia Artificial de última generación, un sistema de tokens descentralizado, videojuegos inmersivos, activos digitales NFT y soluciones de alta calidad para la nueva era web3.</p>
+            <button onclick="document.getElementById('welcome-screen').style.display='none'" class="btn" style="background: rgba(128,0,128,0.8); color: #00ff00; font-size: 1.1em; padding: 15px; margin: 0 auto;">GO ecosystem ZAARD</button>
+        </div>
     </div>
 
     <div class="marquee-container">
@@ -43,14 +45,20 @@
             <img src="https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue">
             <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
             <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
+            <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
         </div>
     </div>
 
-    <div class="video-container"><iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe></div>
+    <div style="width: 80%; max-width: 280px; height: 160px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
+        <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe>
+    </div>
 
-    <a href="https://app.binance.com/uni-qr/web3-token-details?tokenCA=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65&binanceChainId=56" class="btn" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">TOKEN</a>
+    <div style="margin-bottom: 20px;">
+        <a href="https://app.binance.com/uni-qr/web3-token-details?tokenCA=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65&binanceChainId=56" class="btn-token"></a>
+        <span style="color: #00ff00; font-size: 0.8em; font-weight: bold;">TOKEN</span>
+    </div>
 
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-pancake"></a>
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-pancake">GO PANKACKE SWAP</a>
 
     <div class="grid">
         <a href="#" class="btn">MÚSICA</a>
