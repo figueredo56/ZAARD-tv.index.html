@@ -7,21 +7,38 @@
     <style>
         body { 
             margin: 0; padding: 10px; font-family: sans-serif; text-align: center; color: white; 
-            background: #000; display: flex; flex-direction: column; align-items: center; height: 100vh; overflow: hidden;
+            background: #000; display: flex; flex-direction: column; align-items: center; 
+            min-height: 100vh; box-sizing: border-box;
         }
         
-        /* Ajuste de tamaños para que todo quepa en pantalla */
-        .swap-section { background: rgba(0,0,0,0.5); padding: 5px; border-radius: 10px; width: 90%; border: 1px solid #800080; margin-bottom: 5px; }
-        .video-container { width: 140px; height: 140px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 5px; }
+        /* Ajustes de tamaño y orden */
+        .btn-go-pancake-wrapper { 
+            display: block; width: 100%; max-width: 300px; height: 60px; 
+            background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; 
+            background-size: cover; border-radius: 8px; border: 1px solid #800080; 
+            text-decoration: none; display: flex; align-items: center; justify-content: center; 
+            margin-bottom: 15px;
+        }
+        .go-label { font-size: 0.8em; color: #00ff00; font-weight: bold; text-shadow: 1px 1px 1px #000; }
+
+        .video-container { 
+            width: 100%; max-width: 320px; height: 200px; /* Video más grande */
+            border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 15px; 
+        }
         .video-container iframe { width: 100%; height: 100%; }
         
-        .btn-go-pancake-wrapper { display: block; width: 140px; height: 50px; background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; background-size: cover; border-radius: 8px; border: 1px solid #800080; text-decoration: none; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
-        .go-label { font-size: 0.6em; color: #00ff00; font-weight: bold; text-shadow: 1px 1px 1px #000; }
-
-        .btn-token { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #fff; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; background-size: cover; margin: 5px auto; }
+        .btn-token { 
+            width: 60px; height: 60px; border-radius: 50%; border: 2px solid #fff; 
+            background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; 
+            background-size: cover; margin-bottom: 15px; display: block;
+        }
         
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 95%; margin-top: 5px; }
-        .btn { background: rgba(0,0,0,0.7); border: 1px solid #800080; padding: 8px 2px; text-decoration: none; border-radius: 8px; font-size: 0.7em; color: #00ff00; animation: blink-green 1.5s infinite; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 400px; margin-top: 5px; }
+        .btn { 
+            background: rgba(0,0,0,0.7); border: 1px solid #800080; padding: 12px 2px; 
+            text-decoration: none; border-radius: 8px; font-size: 0.8em; color: #00ff00; 
+            animation: blink-green 1.5s infinite; 
+        }
 
         @keyframes blink-green { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
@@ -47,7 +64,7 @@
         <a href="#" class="btn">GAMING</a>
     </div>
 
-    <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 10px;">
+    <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 15px;">
         <a href="#" class="btn" style="border-color: #00ffcc;">ZAARD ARCADE</a>
         <a href="#" class="btn" style="border-color: #00ffcc;">ZAARD WEB</a>
     </div>
