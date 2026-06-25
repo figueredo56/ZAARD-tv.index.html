@@ -2,85 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ZAARD | Menú Principal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAARD | Ecosistema</title>
     <style>
-        body { 
-            margin: 0; padding: 10px; font-family: sans-serif; text-align: center; color: white; 
-            background: url('https://ipfs.io/ipfs/bafybeic3rhz5qpxq3slf4n77h6jwhtspd3jifjm2z7777cm4whniozi32u') no-repeat center center fixed; 
-            background-size: cover;
-            display: flex; flex-direction: column; align-items: center; 
-            min-height: 100vh; box-sizing: border-box;
-        }
-
-        /* Estilos del Marquee */
-        .marquee-container { width: 100%; max-width: 400px; overflow: hidden; margin-bottom: 15px; border-bottom: 2px solid #800080; }
-        .marquee { display: flex; animation: marquee 15s linear infinite; }
-        .marquee img { height: 50px; margin: 0 10px; }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        body { margin: 0; padding: 10px; font-family: sans-serif; text-align: center; color: white; background: url('https://ipfs.io/ipfs/bafybeic3rhz5qpxq3slf4n77h6jwhtspd3jifjm2z7777cm4whniozi32u') no-repeat center center fixed; background-size: cover; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
-        .video-container { 
-            width: 100%; max-width: 350px; height: 220px; 
-            border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 15px; 
-            background: rgba(0,0,0,0.6);
-        }
-        .video-container iframe { width: 100%; height: 100%; }
-        
-        .btn-token { 
-            width: 80px; height: 80px; border-radius: 50%; border: 3px solid #fff; 
-            background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; 
-            background-size: cover; margin-bottom: 15px; display: block;
-        }
-        
-        .btn-go-pancake-wrapper { 
-            display: block; width: 100%; max-width: 280px; height: 50px; 
-            background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; 
-            background-size: cover; border-radius: 8px; border: 1px solid #800080; 
-            text-decoration: none; display: flex; align-items: center; justify-content: center; 
-            margin-bottom: 20px;
-        }
-        .go-label { font-size: 0.8em; color: #00ff00; font-weight: bold; text-shadow: 1px 1px 2px #000; }
+        /* Pantalla de bienvenida */
+        #welcome-screen { position: fixed; top:0; left:0; width:100%; height:100%; background: #000; z-index: 100; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+        .blink { animation: blink-text 1.5s infinite; color: #00ff00; font-weight: bold; }
+        @keyframes blink-text { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; max-width: 400px; }
-        .btn { 
-            background: rgba(0,0,0,0.8); border: 1px solid #800080; padding: 12px 2px; 
-            text-decoration: none; border-radius: 8px; font-size: 0.7em; color: #00ff00; 
-            animation: blink-green 1.5s infinite; display: flex; align-items: center; justify-content: center;
-        }
+        /* Contenedores reducidos un 25% para mejor armonía */
+        .video-container { width: 75%; max-width: 280px; height: 160px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 15px; background: rgba(0,0,0,0.5); }
+        
+        /* Efecto de pulso para botones */
+        .pulse-border { border: 2px solid #800080; animation: pulse-purple 2s infinite; }
+        @keyframes pulse-purple { 0% { box-shadow: 0 0 0 0 rgba(128, 0, 128, 0.4); } 70% { box-shadow: 0 0 0 8px rgba(128, 0, 128, 0); } 100% { box-shadow: 0 0 0 0 rgba(128, 0, 128, 0); } }
 
-        @keyframes blink-green { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        .btn-token { width: 60px; height: 60px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') center/cover; display: block; margin: 0 auto; }
+        
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; width: 85%; max-width: 320px; margin-top: 10px; }
+        .btn { background: rgba(0,0,0,0.6); border: 1px solid #800080; padding: 8px 2px; text-decoration: none; border-radius: 6px; font-size: 0.6em; color: #00ff00; animation: blink-green 1.5s infinite; }
+        @keyframes blink-green { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
     </style>
 </head>
 <body>
 
-    <!-- Cinta superior -->
-    <div class="marquee-container">
-        <div class="marquee">
-            <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
-            <img src="https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym">
-            <img src="https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue">
-            <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
-            <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
-            <!-- Repetimos imágenes para un bucle infinito fluido -->
-            <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
-            <img src="https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym">
-        </div>
+    <div id="welcome-screen">
+        <h1 class="blink">Bienvenidos al canal oficial ZAARD</h1>
+        <p style="padding: 10px; font-size: 0.9em;">ZAARD es un ecosistema que engloba todo lo referente a la IA con token, juegos, NFT y alta calidad.</p>
+        <button onclick="document.getElementById('welcome-screen').style.display='none'" class="btn blink" style="padding: 15px 30px; font-size: 1em; border-color: #00ff00;">GO ecosystem ZAARD</button>
     </div>
 
-    <!-- Video -->
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" frameborder="0" allowfullscreen></iframe>
+    <div class="video-container"><iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe></div>
+
+    <div style="margin-bottom: 15px;">
+        <a href="https://app.binance.com/uni-qr/web3-token-details?tokenCA=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65&binanceChainId=56" class="btn-token pulse-border"></a>
+        <span style="font-size: 0.7em; display: block; margin-top: 4px;">GO TOKEN</span>
     </div>
 
-    <!-- Token -->
-    <a href="#" class="btn-token"></a>
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="pulse-border" style="display:block; width: 160px; padding: 8px; text-decoration:none; color:#00ff00; font-size: 0.7em; border-radius: 8px; margin-bottom: 20px;">PANKACKE SWAP</a>
 
-    <!-- Botón PancakeSwap -->
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-go-pancake-wrapper">
-        <span class="go-label">PANKACKE</span>
-    </a>
-
-    <!-- Botones -->
     <div class="grid">
         <a href="#" class="btn">MÚSICA</a>
         <a href="#" class="btn">DEPORTES</a>
@@ -88,11 +50,12 @@
         <a href="#" class="btn">CIENCIAS</a>
         <a href="#" class="btn">CINE</a>
         <a href="#" class="btn">GAMING</a>
+        <a href="#" class="btn" style="border-color: #fff;">NFTs</a>
     </div>
 
     <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 15px;">
-        <a href="#" class="btn" style="border-color: #00ffcc;">ZAARD ARCADE</a>
-        <a href="#" class="btn" style="border-color: #00ffcc;">ZAARD WEB</a>
+        <a href="https://figueredo56.github.io/ZAARD-Arcade/index-menu.html" class="btn pulse-border" style="border-color: #00ffcc;">ZAARD ARCADE</a>
+        <a href="https://figueredo56.github.io/zaard-official/" class="btn pulse-border" style="border-color: #00ffcc;">ZAARD WEB</a>
     </div>
 
 </body>
