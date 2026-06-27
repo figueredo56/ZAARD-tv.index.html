@@ -6,17 +6,23 @@
     <title>ECOSISTEMA ZAARD</title>
     
     <style>
-        body { margin: 0; padding: 10px; font-family: sans-serif; text-align: center; color: white; 
+        body { margin: 0; padding: 0; font-family: sans-serif; text-align: center; color: white; 
                background: url('https://ipfs.io/ipfs/bafybeiejii4j44whnjthdfqlradk2loh7hgjirloqt4mrpzarfnadvjfsm') no-repeat center center fixed; 
                background-size: cover; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
         #welcome-screen { position: fixed; top:0; left:0; width:100%; height:100%; 
                           background: url('https://ipfs.io/ipfs/bafybeiejii4j44whnjthdfqlradk2loh7hgjirloqt4mrpzarfnadvjfsm') center/cover; 
-                          z-index: 100; display: flex; justify-content: center; align-items: center; }
+                          z-index: 1000; display: flex; justify-content: center; align-items: center; }
         
-        .text-box { background: rgba(128, 0, 128, 0.7); padding: 25px; border-radius: 20px; width: 80%; border: 2px solid #800080; }
+        .text-box { background: rgba(128, 0, 128, 0.7); padding: 25px; border-radius: 20px; width: 85%; border: 2px solid #800080; }
         
-        /* Animaciones */
+        /* Carrusel */
+        .marquee-container { width: 100%; overflow: hidden; margin-top: 10px; margin-bottom: 20px; }
+        .marquee { display: flex; animation: scroll 12s linear infinite; }
+        .marquee img { height: 40px; margin: 0 5px; flex-shrink: 0; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Estilos generales */
         @keyframes border-cycle { 0% { border-color: #00ff00; } 33% { border-color: #0000ff; } 66% { border-color: #800080; } 100% { border-color: #00ff00; } }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         
@@ -25,60 +31,61 @@
         
         .blink-green { color: #00ff00; font-weight: bold; font-size: 0.6em; animation: blink 1s infinite; margin-top: 5px; }
         
-        .btn { border: 3px solid; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.65em; 
+        .btn { border: 3px solid; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.7em; 
                color: #00ff00; background: rgba(75,0,130,0.7); display: flex; align-items: center; 
                justify-content: center; margin: 5px; animation: border-cycle 3s infinite; }
 
-        .btn-pancake-img { width: 90%; max-width: 280px; height: 50px; background: url('https://ipfs.io/ipfs/bafybeigusn7dfvcrsli3dzv4qka656gk6h3u6kaxkrhhl4evexhdisadua') center/cover; border: 3px solid; border-radius: 10px; display: block; margin-top: 10px; animation: border-cycle 3s infinite; }
-        .btn-nft { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu') center/cover; border: 3px solid; animation: border-cycle 3s infinite; display: block; margin: 10px auto; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 15px; }
+        .main-container { margin-top: 20px; width: 100%; display: flex; flex-direction: column; align-items: center; }
     </style>
 </head>
 <body>
 
     <div id="welcome-screen">
         <div class="text-box">
-            <h1 style="color: #00ff00; font-size: 1.4em;">ZAARD INNOVATION</h1>
+            <h1 style="color: #00ff00; font-size: 1.4em;">Bienvenidos al ecosistema ZAARD INNOVATION</h1>
+            <p style="color: white; font-size: 0.95em;">Somos un ecosistema de alta gama, diseñado para llevar la experiencia Web3 al siguiente nivel. Aquí, la tecnología se une con la diversión: disfruta de nuestra utilidad exclusiva en NFTs y sumérgete en un catálogo de juegos innovadores creados para apasionados como tú.</p>
             <button onclick="document.getElementById('welcome-screen').style.display='none'" class="btn" style="background: rgba(128,0,128,0.8); color: #00ff00; font-size: 1.1em; padding: 15px; margin: 10px auto; border-color: #00ff00;">GO ecosystem ZAARD</button>
         </div>
     </div>
 
-    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; width: 90%; max-width: 350px; margin-bottom: 20px;">
-        <div style="width: 60%; height: 130px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden;">
-            <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe>
+    <div class="marquee-container">
+        <div class="marquee">
+            <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
+            <img src="https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym">
+            <img src="https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue">
+            <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
+            <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
+            <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
+            <img src="https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym">
+            <img src="https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue">
+            <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
+            <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
         </div>
+    </div>
+
+    <div class="main-container">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; width: 90%; max-width: 350px; margin-bottom: 20px;">
+            <div style="width: 60%; height: 130px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden;">
+                <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe>
+            </div>
+            <div style="width: 35%; display: flex; flex-direction: column; gap: 12px;">
+                <div><a href="#" class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu');"></a><span class="blink-green">ZARD</span></div>
+                <div><a href="#" class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeihqftstfjm3i32e3xm54xo52h6tpldlmfkwc2z6tx5qthbonyboue');"></a><span class="blink-green">PANGA</span></div>
+                <div><a href="#" class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeif5pqgoxonxnxscoayvpzawsxzw5lm6upxkbslnkbgjeenf5cg24m');"></a><span class="blink-green">ZARED</span></div>
+            </div>
+        </div>
+
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" style="width: 90%; max-width: 280px; height: 50px; background: url('https://ipfs.io/ipfs/bafybeigusn7dfvcrsli3dzv4qka656gk6h3u6kaxkrhhl4evexhdisadua') center/cover; border: 3px solid; border-radius: 10px; animation: border-cycle 3s infinite; margin-top: 10px;"></a>
         
-        <div style="width: 35%; display: flex; flex-direction: column; gap: 12px;">
-            <div>
-                <a href="#" class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu');"></a>
-                <span class="blink-green">ZARD</span>
-            </div>
-            <div>
-                <a href="#" class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeihqftstfjm3i32e3xm54xo52h6tpldlmfkwc2z6tx5qthbonyboue');"></a>
-                <span class="blink-green">PANGA</span>
-            </div>
-            <div>
-                <a href="#" class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeif5pqgoxonxnxscoayvpzawsxzw5lm6upxkbslnkbgjeenf5cg24m');"></a>
-                <span class="blink-green">ZARED</span>
-            </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 15px;">
+            <a href="#" class="btn">MÚSICA</a>
+            <a href="#" class="btn">DEPORTES</a>
+            <a href="#" class="btn">NOTICIAS</a>
         </div>
-    </div>
-
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-pancake-img"></a>
-    <span class="blink-green">GO PANKACKE SWAP</span>
-
-    <a href="https://element.market/account/collection" class="btn-nft"></a>
-    <span class="blink-green">NFT</span>
-
-    <div class="grid">
-        <a href="#" class="btn">MÚSICA</a>
-        <a href="#" class="btn">DEPORTES</a>
-        <a href="#" class="btn">NOTICIAS</a>
-    </div>
-
-    <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 10px;">
-        <a href="https://figueredo56.github.io/ZAARD-Arcade/index-menu.html" class="btn">ZAARD ARCADE</a>
-        <a href="https://figueredo56.github.io/zaard-official/" class="btn">ZAARD WEB</a>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 90%; max-width: 350px; margin-top: 10px;">
+            <a href="https://figueredo56.github.io/ZAARD-Arcade/index-menu.html" class="btn">ZAARD ARCADE</a>
+            <a href="https://figueredo56.github.io/zaard-official/" class="btn">ZAARD WEB</a>
+        </div>
     </div>
 
 </body>
