@@ -34,12 +34,11 @@
         .btn { border: 3px solid; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.7em; 
                color: #00ff00; background: rgba(75,0,130,0.7); display: flex; align-items: center; 
                justify-content: center; margin: 5px; animation: border-cycle 3s infinite; }
-
-        .main-container { margin-top: 20px; width: 100%; display: flex; flex-direction: column; align-items: center; }
     </style>
 </head>
 <body>
 
+    <!-- Pantalla de Bienvenida -->
     <div id="welcome-screen">
         <div class="text-box">
             <h1 style="color: #00ff00; font-size: 1.4em;">Bienvenidos al ecosistema ZAARD INNOVATION</h1>
@@ -48,6 +47,7 @@
         </div>
     </div>
 
+    <!-- Carrusel arriba -->
     <div class="marquee-container">
         <div class="marquee">
             <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
@@ -63,7 +63,8 @@
         </div>
     </div>
 
-    <div class="main-container">
+    <!-- Contenedor de botones ajustado hacia arriba con margin-top: -10px -->
+    <div class="main-container" style="margin-top: -10px; width: 100%; display: flex; flex-direction: column; align-items: center;"> 
         <div style="display: flex; align-items: center; justify-content: center; gap: 15px; width: 90%; max-width: 350px; margin-bottom: 20px;">
             <div style="width: 60%; height: 130px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden;">
                 <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe>
